@@ -1,0 +1,46 @@
+header {
+  background: #67aeb1fb;
+}
+
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+li img {
+  width: 20px;
+}
+
+img:hover {
+  width: 27px;
+}
+
+.container {
+  float: right;
+  width: 40%;
+  margin: 0 auto;
+}
+
+nav ul {
+  margin: 15;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 30px;
+  position: relative;
+}
+
+nav a {
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  font-weight: bolder;
+  color: #000;
+}
