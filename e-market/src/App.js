@@ -9,25 +9,31 @@ function App() {
   const [minPrice, setMinPrice] = React.useState(1);
 
   return (
-    <section className="App">
-      <Nav />
-      <h1>e-Market</h1>
-      <h2> Filter By</h2>
+    <main>
+      <header>
+        <Nav />
+      </header>
+      <div>
+        <section className="filters">
+          <h2> Filter By</h2>
 
-      <PriceFilter
-        maxPrice={maxPrice}
-        setMaxPrice={setMaxPrice}
-        minPrice={minPrice}
-        setMinPrice={setMinPrice}
-      />
-
-      <MarketList
-        maxPrice={maxPrice}
-        setMaxPrice={setMaxPrice}
-        minPrice={minPrice}
-        setMinPrice={setMinPrice}
-      />
-    </section>
+          <PriceFilter
+            maxPrice={maxPrice}
+            setMaxPrice={setMaxPrice}
+            minPrice={minPrice}
+            setMinPrice={setMinPrice}
+          />
+        </section>
+        <section>
+          <MarketList
+            maxPrice={maxPrice}
+            setMaxPrice={setMaxPrice}
+            minPrice={minPrice}
+            setMinPrice={setMinPrice}
+          />
+        </section>
+      </div>
+    </main>
   );
 }
 

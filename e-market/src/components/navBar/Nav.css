@@ -1,19 +1,19 @@
-header {
-  background: #67aeb1fb;
-}
-
-header::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 li img {
   width: 20px;
 }
 
 img:hover {
   width: 27px;
+}
+
+.icon {
+  float: left;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.icon h1 {
+  width: 10px;
 }
 
 .container {
