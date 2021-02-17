@@ -2,7 +2,8 @@ import React from "react";
 import market from "../../data";
 import "./marketList.css";
 
-function MarketList({ maxPrice, minPrice }) {
+function MarketList({ maxPrice, minPrice, items, setItems }) {
+  const addItem = (markt) => setItems(items.concat(markt))
   return (
     <ul className="grid">
       {market
@@ -13,6 +14,7 @@ function MarketList({ maxPrice, minPrice }) {
             <img src={markt.image} className="itemImage" />
             <p>{markt.description}</p>
             <p>₪{markt.price}</p>
+            <button onClick =  { ()=> addItem(markt)} >add to cart</button>
           </li>
         ))}
     </ul>

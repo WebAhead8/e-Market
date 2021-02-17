@@ -7,7 +7,7 @@ import Nav from "./components/navBar/Nav";
 function App() {
   const [maxPrice, setMaxPrice] = React.useState(100);
   const [minPrice, setMinPrice] = React.useState(1);
-
+  const [items, setItems] = React.useState([]);
   return (
     <main>
       <header>
@@ -16,7 +16,6 @@ function App() {
       <div>
         <section className="filters">
           <h2> Filter By</h2>
-
           <PriceFilter
             maxPrice={maxPrice}
             setMaxPrice={setMaxPrice}
@@ -30,6 +29,8 @@ function App() {
             setMaxPrice={setMaxPrice}
             minPrice={minPrice}
             setMinPrice={setMinPrice}
+            items = {items}
+            setItems = {setItems}
           />
         </section>
       </div>
