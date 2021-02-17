@@ -1,8 +1,8 @@
-li img {
+.imageNav {
   width: 20px;
 }
 
-img:hover {
+.imageNav:hover {
   width: 27px;
 }
 

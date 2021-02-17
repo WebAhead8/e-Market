@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import PriceFilter from "./components/PriceFilter";
-import MarketList from "./components/marketList";
+import MarketList from "./components/marketList/marketList";
 import Nav from "./components/navBar/Nav";
 
 function App() {
