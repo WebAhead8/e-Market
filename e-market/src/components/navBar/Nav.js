@@ -9,7 +9,7 @@ const Nav = () => {
       <div className="container">
         <ul>
           <li>
-            <img src={cart}></img>
+            <img src={cart} className="imageNav"></img>
           </li>
           <li>
             <a href="/">HOME</a>
