@@ -1,7 +1,7 @@
 import React from "react";
-import market from "./data";
+import market from "../data";
 
-function marketList(props) {
+function MarketList({ maxPrice, minPrice }) {
   return (
     <main>
       <section></section>
@@ -20,4 +20,4 @@ function marketList(props) {
     </main>
   );
 }
-export default marketList;
+export default MarketList;

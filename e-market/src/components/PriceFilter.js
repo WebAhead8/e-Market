@@ -1,7 +1,7 @@
 import React from "react";
-import market from "./data";
-function priceFilter(props) {
-  console.log(props);
+// import market from "./data";
+
+function PriceFilter({ maxPrice, setMaxPrice, minPrice, setMinPrice }) {
   return (
     <div>
       <section>
@@ -29,4 +29,4 @@ function priceFilter(props) {
     </div>
   );
 }
-export default priceFilter;
+export default PriceFilter;
