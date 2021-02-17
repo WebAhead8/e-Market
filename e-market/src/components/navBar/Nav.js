@@ -4,8 +4,9 @@ import searchIcon from "./loupe.png";
 
 const Nav = () => {
   return (
-    <header>
-      <nav className="container">
+    <nav>
+      <h1 className="icon">e-Market</h1>
+      <div className="container">
         <ul>
           <li>
             <img src={cart}></img>
@@ -23,8 +24,8 @@ const Nav = () => {
             <a href="#">SOMETHING </a>
           </li>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 };
 
