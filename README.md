@@ -9,17 +9,17 @@ e-Market , is an online market where you can find a lot of items from wide diffe
 * You can search for a specefic item by the name .
 * You can serch for items by using filters like price range and category .
 
-##Build with :
+## Build with :
 * React js 
 * CSS
 * HTML
 
 ## Team Work :
 
-- Alaa Lathqani
-- Mahmoud Diab 
-- Mohamad Sawaed
-- Jihad Banna 
+* Alaa Lathqani
+* Mahmoud Diab 
+* Mohamad Sawaed
+* Jihad Banna 
 
 ## Enter the app :
 
