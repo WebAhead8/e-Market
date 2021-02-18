@@ -8,9 +8,10 @@ import Nav from "./components/navBar/Nav";
 function App() {
   const [maxPrice, setMaxPrice] = React.useState(100);
   const [minPrice, setMinPrice] = React.useState(1);
-  const [searchTerm, setSearchTerm] = React.useState("all");
+  const [searchTerm, setSearchTerm] = React.useState("");
 
   const [items, setItems] = React.useState([]);
+
   return (
     <main>
       <header>
@@ -29,7 +30,6 @@ function App() {
         <section>
           <MarketList
             search={searchTerm}
-            setSearch={setSearchTerm}
             maxPrice={maxPrice}
             setMaxPrice={setMaxPrice}
             minPrice={minPrice}
@@ -39,7 +39,7 @@ function App() {
           />
         </section>
         <section>
-          <Card items={items} />
+          <Cart items={items} />
         </section>
       </div>
     </main>
