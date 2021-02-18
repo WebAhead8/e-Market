@@ -1,7 +1,8 @@
 import "./App.css";
 import React from "react";
 import PriceFilter from "./components/PriceFilter";
-import MarketList from "./components/marketList";
+import MarketList from "./components/marketList/marketList";
+import Cart from "./components/cart";
 import Nav from "./components/navBar/Nav";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   const [minPrice, setMinPrice] = React.useState(1);
   const [searchTerm, setSearchTerm] = React.useState("all");
 
+  const [items, setItems] = React.useState([]);
   return (
     <main>
       <header>
@@ -17,7 +19,6 @@ function App() {
       <div>
         <section className="filters">
           <h2> Filter By</h2>
-
           <PriceFilter
             maxPrice={maxPrice}
             setMaxPrice={setMaxPrice}
@@ -33,7 +34,12 @@ function App() {
             setMaxPrice={setMaxPrice}
             minPrice={minPrice}
             setMinPrice={setMinPrice}
+            items={items}
+            setItems={setItems}
           />
+        </section>
+        <section>
+          <Card items={items} />
         </section>
       </div>
     </main>
