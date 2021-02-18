@@ -43,7 +43,7 @@ function App() {
           />
         </section>
         <section>
-          <Cart items={items} />
+          <Cart items={items} setItems={setItems} />
         </section>
       </div>
     </main>
