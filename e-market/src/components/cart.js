@@ -28,12 +28,26 @@ function Cart({ items }) {
       </tr>
     );
   });
+<<<<<<< HEAD
+  console.log(productsToShow);
+  // let productsToShow = [];
+  // for (const product of Object.keys(listOfProducts)) {
+  //     productsToShow.push(<tr> <td>{product}</td> <td>{product.quantity}</td> <td>{product.price}</td> </tr>);
+  // }
+  console.log(productsToShow);
+=======
 
+>>>>>>> 8e77c862d3be367965734bef0c2482a71205df2c
   return (
     <div>
       <table>
         <tr>
+<<<<<<< HEAD
+          {" "}
+          <th>Product Name</th> <th>Quantity</th> <th>Price Of One Product</th>{" "}
+=======
           <th>Product Name</th> <th>Quantity</th> <th>Price Of One Product</th>
+>>>>>>> 8e77c862d3be367965734bef0c2482a71205df2c
         </tr>
         {productsToShow}
       </table>
