@@ -12,6 +12,7 @@ header::after {
   padding: 2rem;
   background-color: hsl(220, 20%, 90%);
   display: grid;
+  float: left;
 }
 
 fieldset {

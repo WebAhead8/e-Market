@@ -2,7 +2,14 @@ import React from "react";
 import data from "../../data";
 import "./marketList.css";
 
-function MarketList({ maxPrice, minPrice, items, search, setItems }) {
+function MarketList({
+  maxPrice,
+  minPrice,
+  items,
+  search,
+  setItems,
+  catFilter,
+}) {
   const addItem = (markt) => setItems(items.concat(markt));
 
   const [searchResult, setSearchResult] = React.useState([]);
@@ -15,6 +22,13 @@ function MarketList({ maxPrice, minPrice, items, search, setItems }) {
   return (
     <ul className="grid">
       {searchResult
+        .filter((markt) => {
+          if (catFilter === "All" || catFilter === "") {
+            return markt;
+          } else {
+            return markt.category === catFilter;
+          }
+        })
         .filter((markt) => markt.price >= minPrice && markt.price <= maxPrice)
         .map((markt) => (
           <li className="card" key={markt.id}>
