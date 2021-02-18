@@ -32,6 +32,7 @@ function App() {
             setMinPrice={setMinPrice}
           />
           <CategoryFilter catFilter={catFilter} setCatFilter={setCatFilter} />
+          <Cart items={items} />
         </section>
         <section>
           <MarketList
@@ -42,9 +43,6 @@ function App() {
             items={items}
             setItems={setItems}
           />
-        </section>
-        <section>
-          <Cart items={items} />
         </section>
       </div>
     </main>
