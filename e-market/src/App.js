@@ -4,12 +4,13 @@ import PriceFilter from "./components/PriceFilter";
 import MarketList from "./components/marketList/marketList";
 import Cart from "./components/cart";
 import Nav from "./components/navBar/Nav";
+import CategoryFilter from "./components/CategoryFilter";
 
 function App() {
   const [maxPrice, setMaxPrice] = React.useState(100);
   const [minPrice, setMinPrice] = React.useState(1);
   const [searchTerm, setSearchTerm] = React.useState("");
-
+  const [catFilter, setCatFilter] = React.useState("");
   const [items, setItems] = React.useState([]);
 
   return (
@@ -30,16 +31,15 @@ function App() {
             minPrice={minPrice}
             setMinPrice={setMinPrice}
           />
+          <CategoryFilter catFilter={catFilter} setCatFilter={setCatFilter} />
         </section>
         <section>
           <MarketList
             search={searchTerm}
             maxPrice={maxPrice}
-            setMaxPrice={setMaxPrice}
             minPrice={minPrice}
-            setMinPrice={setMinPrice}
+            catFilter={catFilter}
             items={items}
-            setItems={setItems}
           />
         </section>
         <section>
