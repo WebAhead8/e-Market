@@ -7,11 +7,12 @@ import Nav from "./components/navBar/Nav";
 function App() {
   const [maxPrice, setMaxPrice] = React.useState(100);
   const [minPrice, setMinPrice] = React.useState(1);
+  const [searchTerm, setSearchTerm] = React.useState("all");
 
   return (
     <main>
       <header>
-        <Nav />
+        <Nav search={searchTerm} setSearch={setSearchTerm} />
       </header>
       <div>
         <section className="filters">
@@ -26,6 +27,8 @@ function App() {
         </section>
         <section>
           <MarketList
+            search={searchTerm}
+            setSearch={setSearchTerm}
             maxPrice={maxPrice}
             setMaxPrice={setMaxPrice}
             minPrice={minPrice}

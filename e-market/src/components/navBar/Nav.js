@@ -1,8 +1,10 @@
 import "./Nav.css";
 import cart from "./onlineShop.png";
-import searchIcon from "./loupe.png";
 
-const Nav = () => {
+const Nav = (props) => {
+  const handleChange = (event) => {
+    props.setSearch(event.target.value);
+  };
   return (
     <nav>
       <h1 className="icon">e-Market</h1>
@@ -17,7 +19,12 @@ const Nav = () => {
           <li>
             <label>
               search:
-              <input></input>
+              <input
+                type="text"
+                name="search"
+                value={props.search}
+                onChange={handleChange}
+              ></input>
             </label>
           </li>
           <li>
