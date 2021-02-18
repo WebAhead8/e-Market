@@ -35,7 +35,7 @@ function App() {
           />
         </section>
         <section>
-        <Card 
+        <Cart 
          items = {items}
         />
         </section>
