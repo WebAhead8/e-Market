@@ -20,6 +20,7 @@
   float: right;
   width: 40%;
   margin: 0 auto;
+  display: flex;
 }
 
 nav ul {
@@ -43,4 +44,15 @@ nav a {
 nav a:hover {
   font-weight: bolder;
   color: #000;
+}
+
+.cart span {
+  position: absolute;
+  width: auto;
+  font-size: 10px;
+  background-color: rgb(238, 83, 83);
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bolder;
+  padding: 2px;
 }
