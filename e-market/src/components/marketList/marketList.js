@@ -14,7 +14,7 @@ function MarketList({ maxPrice, minPrice, items, setItems }) {
             <img src={markt.image} className="itemImage" />
             <p>{markt.description}</p>
             <p>₪{markt.price}</p>
-            <button onClick =  { ()=> addItem(markt)} >add to cart</button>
+            <button onClick = {() => addItem(markt)}> add to cart </button>
           </li>
         ))}
     </ul>
