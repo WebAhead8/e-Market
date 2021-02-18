@@ -43,13 +43,7 @@ function App() {
           />
         </section>
         <section>
-<<<<<<< HEAD
-        <Cart
-         items = {items}
-        />
-=======
           <Cart items={items} />
->>>>>>> main
         </section>
       </div>
     </main>
