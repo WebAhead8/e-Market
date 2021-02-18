@@ -1,6 +1,7 @@
-import React from "react"
+import React from "react";
 
 function Cart({ items }) {
+<<<<<<< HEAD
     if (items.length == 0) {
         return <h2>Empty Cart</h2>;
     }
@@ -34,6 +35,9 @@ function Cart({ items }) {
             <h2>Total Price: {totalPrice}</h2>
         </div>
     )
+=======
+  return 0;
+>>>>>>> main
 }
 
 export default Cart;

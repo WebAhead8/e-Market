@@ -1,12 +1,34 @@
 import React from "react";
-import market from "../../data";
+import data from "../../data";
 import "./marketList.css";
 
-function MarketList({ maxPrice, minPrice, items, setItems }) {
-  const addItem = (markt) => setItems(items.concat(markt))
+function MarketList({
+  maxPrice,
+  minPrice,
+  items,
+  search,
+  setItems,
+  catFilter,
+}) {
+  const addItem = (markt) => setItems(items.concat(markt));
+
+  const [searchResult, setSearchResult] = React.useState([]);
+  React.useEffect(() => {
+    const result = data.filter((item) =>
+      item.name.toLowerCase().startsWith(search)
+    );
+    setSearchResult(result);
+  }, [search]);
   return (
     <ul className="grid">
-      {market
+      {searchResult
+        .filter((markt) => {
+          if (catFilter === "All" || catFilter === "") {
+            return markt;
+          } else {
+            return markt.category === catFilter;
+          }
+        })
         .filter((markt) => markt.price >= minPrice && markt.price <= maxPrice)
         .map((markt) => (
           <li className="card" key={markt.id}>
@@ -14,7 +36,7 @@ function MarketList({ maxPrice, minPrice, items, setItems }) {
             <img src={markt.image} className="itemImage" />
             <p>{markt.description}</p>
             <p>₪{markt.price}</p>
-            <button onClick = {() => addItem(markt)}> add to cart </button>
+            <button onClick={() => addItem(markt)}> add to cart </button>
           </li>
         ))}
     </ul>
