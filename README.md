@@ -1,7 +1,7 @@
 # e-Market
 
 
-link to [2nd] title(https://github.com/WebAhead8/e-Market/blob/main/README.md#2nd-title/)
+link to [2nd](https://github.com/WebAhead8/e-Market/blob/main/README.md#2nd-title/)
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 aaaa
 aaaaaa
