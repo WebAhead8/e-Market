@@ -15,7 +15,11 @@ function App() {
   return (
     <main>
       <header>
-        <Nav search={searchTerm} setSearch={setSearchTerm} />
+        <Nav
+          search={searchTerm}
+          setSearch={setSearchTerm}
+          cartLength={items.length}
+        />
       </header>
       <div>
         <section className="filters">

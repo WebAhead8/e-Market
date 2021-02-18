@@ -10,9 +10,12 @@ const Nav = (props) => {
       <h1 className="icon">e-Market</h1>
       <div className="container">
         <ul>
-          <li>
+          <li className="cart">
             <img src={cart} className="imageNav"></img>
+            <span>{props.cartLength}</span>
           </li>
+        </ul>
+        <ul>
           <li>
             <a href="/">HOME</a>
           </li>
