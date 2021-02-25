@@ -1,5 +1,5 @@
 import React from "react";
-import data from "../../data";
+import { marketListData } from "../../utils/marketListData";
 import "./marketList.css";
 
 function MarketList({
@@ -13,15 +13,25 @@ function MarketList({
   const addItem = (markt) => setItems(items.concat(markt));
 
   const [searchResult, setSearchResult] = React.useState([]);
+
+  const [filterData, setFilterData] = React.useState([]);
+
   React.useEffect(() => {
-    const result = data.filter((item) =>
+    marketListData().then((data) => {
+      setSearchResult(data);
+      setFilterData(data);
+    });
+  }, []);
+
+  React.useEffect(() => {
+    const result = searchResult.filter((item) =>
       item.name.toLowerCase().startsWith(search)
     );
-    setSearchResult(result);
+    setFilterData(result);
   }, [search]);
   return (
     <ul className="grid">
-      {searchResult
+      {filterData
         .filter((markt) => {
           if (catFilter === "All" || catFilter === "") {
             return markt;
