@@ -15,6 +15,7 @@ function PriceFilter({ maxPrice, setMaxPrice, minPrice, setMinPrice }) {
           value={minPrice}
           onChange={(event) => setMinPrice(event.target.value)}
         />
+        ({minPrice})
       </label>
       <label>
         max Price
@@ -26,6 +27,7 @@ function PriceFilter({ maxPrice, setMaxPrice, minPrice, setMinPrice }) {
           value={maxPrice}
           onChange={(event) => setMaxPrice(event.target.value)}
         />
+        ({maxPrice})
       </label>
     </fieldset>
   );

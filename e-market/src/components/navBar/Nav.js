@@ -20,6 +20,9 @@ const Nav = (props) => {
             <a href="/">HOME</a>
           </li>
           <li>
+            <a href="/logout">LogOut</a>
+          </li>
+          <li>
             <label>
               search:
               <input
@@ -31,7 +34,7 @@ const Nav = (props) => {
             </label>
           </li>
           <li>
-            <a href="#">SOMETHING </a>
+            <a href="/store">Store </a>
           </li>
         </ul>
       </div>

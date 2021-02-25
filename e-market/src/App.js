@@ -1,52 +1,29 @@
-import "./App.css";
 import React from "react";
-import PriceFilter from "./components/PriceFilter";
-import MarketList from "./components/marketList/marketList";
-import Cart from "./components/cart";
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+
 import Nav from "./components/navBar/Nav";
-import CategoryFilter from "./components/categoryFilter";
+
+//pages
+import Home from "./pages/Home.js";
+import Store from "./Store.js";
+import NotFoundPage from "./pages/404.js";
 
 function App() {
-  const [maxPrice, setMaxPrice] = React.useState(100);
-  const [minPrice, setMinPrice] = React.useState(1);
-  const [searchTerm, setSearchTerm] = React.useState("");
-  const [catFilter, setCatFilter] = React.useState("");
-  const [items, setItems] = React.useState([]);
-
   return (
-    <main>
-      <header>
-        <Nav
-          search={searchTerm}
-          setSearch={setSearchTerm}
-          cartLength={items.length}
-        />
-      </header>
-      <div>
-        <section className="filters">
-          <h2> Filter By</h2>
-          <PriceFilter
-            maxPrice={maxPrice}
-            setMaxPrice={setMaxPrice}
-            minPrice={minPrice}
-            setMinPrice={setMinPrice}
-          />
-          <CategoryFilter catFilter={catFilter} setCatFilter={setCatFilter} />
-          <Cart items={items} />
-        </section>
-        <section>
-          <MarketList
-            search={searchTerm}
-            maxPrice={maxPrice}
-            minPrice={minPrice}
-            catFilter={catFilter}
-            items={items}
-            setItems={setItems}
-          />
-        </section>
-      </div>
-    </main>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home}></Route>
+        <Route path="/Store" component={Store}></Route>
+        <Route Component={NotFoundPage}></Route>
+        <Redirect to="/404"></Redirect>
+      </Switch>
+    </Router>
   );
 }
-
 export default App;
