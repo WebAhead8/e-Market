@@ -33,7 +33,7 @@ export function signUp(signUpData) {
 }
 
 export function isAdminOrNot(token) {
-  return request("http://localhost:4000/checkAdmin", {
-    headers: { authorization: `Bearer ${token}` },
+  return request("http://localhost:4000/checkAmin", {
+    headers: { authorization: `${token}` },
   });
 }
