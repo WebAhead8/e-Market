@@ -15,6 +15,7 @@ import Store from "./Store.js";
 import NotFoundPage from "./pages/404.js";
 import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
+import storeAdmin from "./storeaAdmin";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home}></Route>
         <Route path="/Store" component={Store}></Route>
+        <Route path="/storeAdmin" component={storeAdmin} />
         <Route path="/login" component={LogIn}></Route>
         <Route path="/signup" component={SignUp}></Route>
         <Route Component={NotFoundPage}></Route>

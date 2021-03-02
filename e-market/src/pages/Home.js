@@ -1,9 +1,22 @@
+import { isAdminOrNot } from "../utils/userApi";
+
 function homePage() {
   const token = window.localStorage.getItem("access_token");
+
   const logOut = () => {
     localStorage.removeItem("access_token");
     window.location.reload();
   };
+
+  const isAdmin = () => {
+    const admin = isAdminOrNot(token);
+    if (admin) {
+      window.location = "/storeAdmin";
+    } else {
+      window.location = "/store";
+    }
+  };
+
   if (token) {
     return (
       <div>
@@ -12,7 +25,7 @@ function homePage() {
           <div className="container">
             <ul>
               <li>
-                <a href="/store">Store </a>
+                <a onClick={isAdmin}>Store </a>
               </li>
               <li>
                 <a style={{ cursor: "pointter" }} onClick={logOut}>
