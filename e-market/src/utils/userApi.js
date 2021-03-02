@@ -23,3 +23,11 @@ export function login(loginData) {
     headers: { "content-type": "application/json" },
   });
 }
+
+export function signUp(signUpData) {
+  return request("http://localhost:4000/signup", {
+    method: "POST",
+    body: JSON.stringify(signUpData),
+    headers: { "content-type": "application/json" },
+  });
+}
