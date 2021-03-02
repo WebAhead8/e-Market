@@ -40,18 +40,11 @@ function LogIn() {
     }
   }, []);
 
-  const logOutSubmit = (event) => {
-    localStorage.removeItem("access_token");
-
-    setUser({});
-    setIsLoggedIn(false);
-  };
-
   if (isLoggedIn) {
     return (
       <div>
-        <h1>Hello {user.name}</h1>
-        <button onClick={logOutSubmit}>Log out</button>
+        <h1>Welcom {user.name}</h1>
+        <a href="/">GO TO HOME PAGE</a>
       </div>
     );
   }
@@ -90,5 +83,4 @@ function LogIn() {
     </div>
   );
 }
-
 export default LogIn;
