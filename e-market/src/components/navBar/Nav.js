@@ -5,6 +5,10 @@ const Nav = (props) => {
   const handleChange = (event) => {
     props.setSearch(event.target.value);
   };
+  const logOut = () => {
+    localStorage.removeItem("access_token");
+    window.location.href = "/";
+  };
   return (
     <nav>
       <h1 className="icon">e-Market</h1>
@@ -20,7 +24,9 @@ const Nav = (props) => {
             <a href="/">HOME</a>
           </li>
           <li>
-            <a href="/logout">LogOut</a>
+            <a style={{ cursor: "pointter" }} onClick={logOut}>
+              LogOut
+            </a>
           </li>
           <li>
             <label>

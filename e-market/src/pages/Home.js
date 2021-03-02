@@ -9,12 +9,17 @@ function homePage() {
   };
 
   const isAdmin = () => {
-    const admin = isAdminOrNot(token);
-    if (admin) {
-      window.location = "/storeAdmin";
-    } else {
-      window.location = "/store";
-    }
+    isAdminOrNot(token)
+      .then((data) => {
+        if (data) {
+          window.location = "/storeAdmin";
+        } else {
+          window.location = "/store";
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   if (token) {
