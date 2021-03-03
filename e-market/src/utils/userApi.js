@@ -37,3 +37,19 @@ export function isAdminOrNot(token) {
     headers: { authorization: `${token}` },
   });
 }
+
+export function delProduct(name) {
+  return request("http://localhost:4000/del", {
+    method: "DELETE",
+    body: JSON.stringify({ name: `${name}` }),
+    headers: { "content-type": "application/json" },
+  });
+}
+
+export function addProducts(productData) {
+  return request("http://localhost:4000/addItem", {
+    method: "POST",
+    body: JSON.stringify(productData),
+    headers: { "content-type": "application/json" },
+  });
+}

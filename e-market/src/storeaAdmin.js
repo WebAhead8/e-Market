@@ -1,10 +1,15 @@
 import "./Store.css";
 import React from "react";
 import PriceFilter from "./components/PriceFilter";
+<<<<<<< HEAD
 import MarketList from "./components/marketList/marketList";
 
+=======
+import MarketListAdmin from "./components/marketListAdmin/marketListAdmin";
+>>>>>>> main
 import Nav from "./components/navBar/Nav";
 import CategoryFilter from "./components/categoryFilter";
+import AddProduct from "./components/addPro";
 
 function Store() {
   const [maxPrice, setMaxPrice] = React.useState(100);
@@ -12,6 +17,7 @@ function Store() {
   const [searchTerm, setSearchTerm] = React.useState("");
   const [catFilter, setCatFilter] = React.useState("");
   const [items, setItems] = React.useState([]);
+  const [productData, setproductData] = React.useState({});
 
   return (
     <main>
@@ -24,7 +30,11 @@ function Store() {
       </header>
       <div>
         <section className="filters">
-          <h2> Filter By</h2>
+          <h2> add and delete</h2>
+          <AddProduct
+            productData={productData}
+            setproductData={setproductData}
+          />
           <PriceFilter
             maxPrice={maxPrice}
             setMaxPrice={setMaxPrice}
@@ -34,7 +44,7 @@ function Store() {
           <CategoryFilter catFilter={catFilter} setCatFilter={setCatFilter} />
         </section>
         <section>
-          <MarketList
+          <MarketListAdmin
             search={searchTerm}
             maxPrice={maxPrice}
             minPrice={minPrice}
