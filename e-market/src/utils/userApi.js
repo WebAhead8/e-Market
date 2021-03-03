@@ -1,3 +1,13 @@
+const dotenv = require("dotenv");
+
+dotenv.config();
+
+if (process.env.NODE_ENV === "production") {
+  serverUrl = process.env.SERVER_URL_PRODUCTION;
+} else {
+  serverUrl = process.env.SERVER_URL_DEV;
+}
+
 function request(url, options) {
   return fetch(url, options).then((res) => {
     if (!res.ok) {
@@ -11,13 +21,13 @@ function request(url, options) {
 }
 
 export function getUser(token) {
-  return request("http://localhost:4000/users", {
+  return request(`${serverUrl}/users`, {
     headers: { authorization: `Bearer ${token}` },
   });
 }
 
 export function login(loginData) {
-  return request("http://localhost:4000/login", {
+  return request(`${serverUrl}/login`, {
     method: "POST",
     body: JSON.stringify(loginData),
     headers: { "content-type": "application/json" },
@@ -25,7 +35,7 @@ export function login(loginData) {
 }
 
 export function signUp(signUpData) {
-  return request("http://localhost:4000/signup", {
+  return request(`${serverUrl}/signup`, {
     method: "POST",
     body: JSON.stringify(signUpData),
     headers: { "content-type": "application/json" },
@@ -33,13 +43,13 @@ export function signUp(signUpData) {
 }
 
 export function isAdminOrNot(token) {
-  return request("http://localhost:4000/checkAmin", {
+  return request(`${serverUrl}/checkAmin`, {
     headers: { authorization: `${token}` },
   });
 }
 
 export function delProduct(name) {
-  return request("http://localhost:4000/del", {
+  return request(`${serverUrl}/del`, {
     method: "DELETE",
     body: JSON.stringify({ name: `${name}` }),
     headers: { "content-type": "application/json" },
@@ -47,7 +57,7 @@ export function delProduct(name) {
 }
 
 export function addProducts(productData) {
-  return request("http://localhost:4000/addItem", {
+  return request(`${serverUrl}/addItem`, {
     method: "POST",
     body: JSON.stringify(productData),
     headers: { "content-type": "application/json" },
