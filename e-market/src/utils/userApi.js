@@ -1,13 +1,13 @@
-const dotenv = require("dotenv");
+// const dotenv = require("dotenv");
 
-dotenv.config();
+// dotenv.config();
 
 let serverUrl;
 
 if (process.env.NODE_ENV === "production") {
-  serverUrl = process.env.SERVER_URL_PRODUCTION;
+  serverUrl = process.env.REACT_APP_SERVER_URL_PRODUCTION;
 } else {
-  serverUrl = process.env.SERVER_URL_DEV;
+  serverUrl = process.env.REACT_APP_SERVER_URL_DEV;
 }
 
 function request(url, options) {
