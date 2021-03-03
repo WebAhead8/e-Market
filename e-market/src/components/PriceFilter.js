@@ -10,7 +10,7 @@ function PriceFilter({ maxPrice, setMaxPrice, minPrice, setMinPrice }) {
         <input
           type="range"
           min="1"
-          max="100"
+          max="9999"
           step="1"
           value={minPrice}
           onChange={(event) => setMinPrice(event.target.value)}
@@ -22,7 +22,7 @@ function PriceFilter({ maxPrice, setMaxPrice, minPrice, setMinPrice }) {
         <input
           type="range"
           min="1"
-          max="100"
+          max="9999"
           step="1"
           value={maxPrice}
           onChange={(event) => setMaxPrice(event.target.value)}
