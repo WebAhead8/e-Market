@@ -1,0 +1,29 @@
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: grey;
+}
+th {
+  padding: 0.5rem;
+}
+
+thead {
+  background: #262626;
+}
+tbody {
+  background-color: rgb(179, 170, 170);
+}
+
+tr {
+  text-align: left;
+  color: #fff;
+  border-right: 1px solid #a7a7a7;
+}
+td {
+  display: table-cell;
+  vertical-align: inherit;
+  padding: 0.5rem;
+}

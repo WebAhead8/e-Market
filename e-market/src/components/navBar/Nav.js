@@ -1,5 +1,9 @@
 import "./Nav.css";
 import cart from "./onlineShop.png";
+import Cart from "../cart/cart";
+
+import React from "react";
+import Popup from "reactjs-popup";
 
 const Nav = (props) => {
   const handleChange = (event) => {
@@ -13,12 +17,27 @@ const Nav = (props) => {
     <nav>
       <h1 className="icon">e-Market</h1>
       <div className="container">
-        <ul>
-          <li className="cart">
-            <img src={cart} className="imageNav"></img>
-            <span>{props.cartLength}</span>
-          </li>
-        </ul>
+        <Popup
+          trigger={
+            <ul>
+              <li className="cart">
+                <img src={cart} className="imageNav"></img>
+                <span>{props.cartLength}</span>
+              </li>
+            </ul>
+          }
+          modal
+          nested
+        >
+          {(close) => (
+            <div className="modal">
+              <button className="close" onClick={close}>
+                &times;
+              </button>
+              <Cart items={props.items} />
+            </div>
+          )}
+        </Popup>
         <ul>
           <li>
             <a href="/">HOME</a>
@@ -38,9 +57,6 @@ const Nav = (props) => {
                 onChange={handleChange}
               ></input>
             </label>
-          </li>
-          <li>
-            <a href="/store">Store </a>
           </li>
         </ul>
       </div>
