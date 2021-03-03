@@ -8,7 +8,10 @@ if (process.env.NODE_ENV === "production") {
   serverUrl = process.env.REACT_APP_SERVER_URL_PRODUCTION;
 } else {
   serverUrl = process.env.REACT_APP_SERVER_URL_DEV;
+  // serverUrl = process.env.REACT_APP_SERVER_URL_PRODUCTION;
 }
+
+console.log(serverUrl);
 
 function request(url, options) {
   return fetch(url, options).then((res) => {
@@ -29,6 +32,7 @@ export function getUser(token) {
 }
 
 export function login(loginData) {
+  console.log(serverUrl, "inside login");
   return request(`${serverUrl}/login`, {
     method: "POST",
     body: JSON.stringify(loginData),
