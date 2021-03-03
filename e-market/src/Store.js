@@ -2,12 +2,12 @@ import "./Store.css";
 import React from "react";
 import PriceFilter from "./components/PriceFilter";
 import MarketList from "./components/marketList/marketList";
-import Cart from "./components/cart";
+
 import Nav from "./components/navBar/Nav";
 import CategoryFilter from "./components/categoryFilter";
 
 function Store() {
-  const [maxPrice, setMaxPrice] = React.useState(100);
+  const [maxPrice, setMaxPrice] = React.useState(9999);
   const [minPrice, setMinPrice] = React.useState(1);
   const [searchTerm, setSearchTerm] = React.useState("");
   const [catFilter, setCatFilter] = React.useState("");
@@ -20,6 +20,7 @@ function Store() {
           search={searchTerm}
           setSearch={setSearchTerm}
           cartLength={items.length}
+          items={items}
         />
       </header>
       <div>
@@ -32,7 +33,6 @@ function Store() {
             setMinPrice={setMinPrice}
           />
           <CategoryFilter catFilter={catFilter} setCatFilter={setCatFilter} />
-          <Cart items={items} />
         </section>
         <section>
           <MarketList

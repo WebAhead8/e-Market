@@ -7,7 +7,7 @@ import CategoryFilter from "./components/categoryFilter";
 import AddProduct from "./components/addPro";
 
 function Store() {
-  const [maxPrice, setMaxPrice] = React.useState(100);
+  const [maxPrice, setMaxPrice] = React.useState(9999);
   const [minPrice, setMinPrice] = React.useState(1);
   const [searchTerm, setSearchTerm] = React.useState("");
   const [catFilter, setCatFilter] = React.useState("");
