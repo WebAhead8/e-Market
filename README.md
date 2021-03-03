@@ -23,4 +23,4 @@ e-Market , is an online market where you can find a lot of items from wide diffe
 
 ## Enter the app :
 
-On [Netlify](https://nifty-ride-dfc4c0.netlify.app) .
+On [Netlify](https://gracious-kare-8edb8a.netlify.app) .
