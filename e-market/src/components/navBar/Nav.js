@@ -58,6 +58,9 @@ const Nav = (props) => {
               ></input>
             </label>
           </li>
+          <li>
+            <a href="/conectUs">Conect US</a>
+          </li>
         </ul>
       </div>
     </nav>
