@@ -7,8 +7,6 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import Nav from "./components/navBar/Nav";
-
 //pages
 import Home from "./pages/Home.js";
 import Store from "./Store.js";
