@@ -2,6 +2,8 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+let serverUrl;
+
 if (process.env.NODE_ENV === "production") {
   serverUrl = process.env.SERVER_URL_PRODUCTION;
 } else {
