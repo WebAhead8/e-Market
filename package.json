@@ -1,0 +1,19 @@
+{
+  "name": "e-market",
+  "version": "1.0.0",
+  "description": "e-Market , is an online market where you can find a lot of items from wide different categories .<br>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebAhead8/e-Market.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebAhead8/e-Market/issues"
+  },
+  "homepage": "https://github.com/WebAhead8/e-Market#readme"
+}

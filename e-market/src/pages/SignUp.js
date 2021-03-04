@@ -1,25 +1,69 @@
-function signUp() {
+import React, { useState } from "react";
+
+import { signUp } from "../utils/userApi";
+
+function SignUp() {
+  const [signUpData, setSignUpData] = useState({
+    email: "",
+    password: "",
+    first_name: "",
+    last_name: "",
+  });
+
+  const [isSignedUp, setIsSignedUp] = useState(false);
+  const [user, setUser] = useState({});
+
+  const onChange = (statekey) => ({ target }) =>
+    setSignUpData({ ...signUpData, [statekey]: target.value });
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    signUp(signUpData)
+      .then((data) => {
+        setUser(data);
+        setIsSignedUp(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  if (isSignedUp) {
+    return (
+      <div>
+        <h1>
+          You have regisitered successfully as {user.name} Go to home page to
+          get in the store
+        </h1>
+        <a href="/">GO TO HOME PAGE</a>
+      </div>
+    );
+  }
+
   return (
     <div className="form">
-      <form action="http://localhost:4000/signup" method="post">
+      <form onSubmit={onSubmit}>
         <fieldset>
           <legend>SIGN UP</legend>
           <label htmlFor="name">
-            name:
+            firstName:
             <input
               type="text"
-              name="name"
-              id="name"
-              onChange={(e) => e.target.value}
+              name="first_name"
+              id="first_name"
+              onChange={onChange("first_name")}
+              value={signUpData.first_name}
             />
           </label>
-          <label htmlFor="lastName">
+          <label htmlFor="last_name">
             lastName:
             <input
               type="text"
-              name="lastName"
-              id="lastName"
-              onChange={(e) => e.target.value}
+              name="last_name"
+              id="last_name"
+              onChange={onChange("last_name")}
+              value={signUpData.last_name}
             />
           </label>
           <label htmlFor="email">
@@ -28,7 +72,8 @@ function signUp() {
               type="email"
               name="email"
               id="email"
-              onChange={(e) => e.target.value}
+              onChange={onChange("email")}
+              value={signUpData.email}
             />
           </label>
           <label htmlFor="password">
@@ -37,11 +82,12 @@ function signUp() {
               type="password"
               name="password"
               id="password"
-              onChange={(e) => e.target.value}
+              onChange={onChange("password")}
+              value={signUpData.password}
             />
           </label>
           <div>
-            <button>Sign Up</button>
+            <button type="submit">Sign Up</button>
           </div>
         </fieldset>
       </form>
@@ -50,4 +96,4 @@ function signUp() {
   );
 }
 
-export default signUp;
+export default SignUp;
