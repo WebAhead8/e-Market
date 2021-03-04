@@ -1,0 +1,19 @@
+.pra {
+  text-align: justify;
+  text-align: left;
+  padding-left: 50%;
+  color: black;
+  font-size: 18px;
+  font-family: Arial;
+  width: 500px;
+}
+.backgr {
+  background-image: url("https://i.pinimg.com/originals/d7/dd/94/d7dd9454070b491daa5dc6b38fb679f5.jpg");
+  background-repeat: no-repeat;
+  background-size: 1350px 950px;
+  background-attachment: fixed;
+  height: 100vh;
+}
+.title {
+  padding-left: 50%;
+}
