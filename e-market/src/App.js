@@ -8,7 +8,7 @@ import Store from './Store.js';
 import NotFoundPage from './pages/404.js';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
-import Cart from './components/cart.js';
+import Cart from './components/cart/cart.js';
 import storeAdmin from './storeaAdmin';
 
 function App() {

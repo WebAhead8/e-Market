@@ -11,6 +11,7 @@ const Nav = (props) => {
 	};
 	const logOut = () => {
 		localStorage.removeItem('access_token');
+		localStorage.removeItem('selectedItems');
 		window.location.href = '/';
 	};
 	return (
